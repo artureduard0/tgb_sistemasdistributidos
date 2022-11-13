@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGB - Sistemas Distribuídos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row mt-5 m-5">
+        <div class="col-4">
+            <h2>Enviar uma requisição</h2>
+            <div class="row">
+                <div class="col-4">
+                    <label><strong>Tipo de Requisição</strong></label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rTipoReq" id="rWebsocket"
+                            data-tipo="websocket" checked>
+                        <label class="form-check-label" for="rWebsocket">
+                            WEBSOCKET
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rTipoReq" data-tipo="ajax" id="rAjax">
+                        <label class="form-check-label" for="rAjax">
+                            AJAX
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <label for="iRepeticoes"><strong>Nº de Repetições</strong></label>
+                    <input id="iRepeticoes" type="number" min="1" value="1" class="form-control"></input>
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col">
+                    <label for="taConteudo"><strong>Conteúdo</strong></label>
+                    <textarea id="taConteudo" rows="14" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="row mt-2 float-end">
+                <div class="col">
+                    <button id="btnLimpar" type="button" class="btn btn-danger">Limpar</button>
+                </div>
+
+                <div class="col">
+                    <button id="btnEnviar" type="button" class="btn btn-success">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <h2>Requisições Enviadas</h2>
+
+            <div class="row">
+                <div class="col">
+                    <textarea id="tRequisicoes" rows="20" disabled
+                        style="width: 100% !important; height: 100% !important;"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <h2>Respostas Recebidas</h2>
+
+            <div class="row">
+                <div class="col">
+                    <textarea id="tRespostas" rows="20" disabled
+                        style="width: 100% !important; height: 100% !important;"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
