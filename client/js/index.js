@@ -40,7 +40,7 @@ $(document).ready(() => {
   const sendWithWs = (nroRepeticoes, conteudo) => {
     const ws = new WebSocket("ws://localhost:3001");
 
-    ws.addEventListener("open", (ws) => onOpenWs(nroRepeticoes, conteudo, ws));
+    ws.addEventListener("open", () => onOpenWs(nroRepeticoes, conteudo, ws));
     ws.addEventListener("message", (event) => onMessageWs(event));
     ws.addEventListener("error", () =>
       alert("Erro ao se conectar com o websocket server!")
