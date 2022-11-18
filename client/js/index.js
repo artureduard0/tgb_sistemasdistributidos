@@ -83,7 +83,7 @@ $(document).ready(() => {
   $("#btnLimpar").on("click", () => {
     $("#iRepeticoes").val(1);
     $("#taConteudo").val("");
-    $("#tRequisicoes").val("");
-    $("#tRespostas").val("");
+    $("#tRequisicoes").text("");
+    $("#tRespostas").text("");
   });
 });
