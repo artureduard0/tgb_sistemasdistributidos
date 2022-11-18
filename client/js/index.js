@@ -54,7 +54,6 @@ $(document).ready(() => {
       $.ajax({
         url: "http://localhost:3000/",
         type: "POST",
-        async: false,
         data: {
           conteudo,
         },
