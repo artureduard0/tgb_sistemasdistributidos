@@ -24,7 +24,7 @@ $(document).ready(() => {
     tRespostas.text(textoAtualizado);
   };
 
-  const onOpenWs = (nroRepeticoes, conteudo) => {
+  const onOpenWs = (nroRepeticoes, conteudo, ws) => {
     console.log("CONEXÃO ESTABELECIDA COM O SERVIDOR!");
 
     for (let i = 0; i < nroRepeticoes; i++) {
@@ -40,7 +40,7 @@ $(document).ready(() => {
   const sendWithWs = (nroRepeticoes, conteudo) => {
     const ws = new WebSocket("ws://localhost:3001");
 
-    ws.addEventListener("open", () => onOpenWs(nroRepeticoes, conteudo));
+    ws.addEventListener("open", (ws) => onOpenWs(nroRepeticoes, conteudo, ws));
     ws.addEventListener("message", (event) => onMessageWs(event));
     ws.addEventListener("error", () =>
       alert("Erro ao se conectar com o websocket server!")
